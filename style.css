@@ -1,0 +1,87 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+div{
+    background-color: #eee;
+    margin: 70px auto;
+    color: deepskyblue;
+    font-size: 50px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    border: 1.5px solid gray;
+}
+div::before{
+    content: "";
+    width: 300px;
+    height: 200px;
+    background-color:deepskyblue ;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: rotate(-10deg);
+    z-index: -1;
+}
+div::after{
+    content: "";
+    width: 300px;
+    height: 200px;
+    background-color: crimson;
+    position: absolute;
+    z-index: -2;
+    left: 0px;
+    top: 0px;
+    transform: rotate(10deg);
+}
+section{
+    width: 200px;
+    height: 200px;
+    background-color: #eee;
+    margin: 65px auto;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    
+}
+section::before{
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: -9px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: crimson crimson crimson transparent ;
+    transition:.5s;
+}
+section::after{
+    position: absolute;
+    left: -19px;
+    top: -19px;
+    content: "";
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border-width: 10px;
+    border-style: solid;
+    border-color:  deepskyblue transparent deepskyblue deepskyblue;
+    transition:.5s;
+    transition-delay: .5s;
+}
+section:hover::before{
+    transform: rotate(1turn);
+}
+section:hover::after{
+    transform: rotate(1turn);
+}
